@@ -10,10 +10,15 @@
   "engines": {
     "node": ">=10"
   },
+  "repository": {
+    "url": "https://github.com/TemoSanchez12/tasc-product-card",
+    "type": "git"
+  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
+    "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -52,6 +57,7 @@
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.0",
     "husky": "^7.0.4",
+    "identity-obj-proxy": "^3.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "rollup-plugin-postcss": "^4.0.2",
@@ -59,5 +65,19 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
     "typescript": "^3.9.10"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@types/react-test-renderer": "^18.0.0",
+    "babel-jest": "^28.0.2",
+    "jest": "^25.5.4",
+    "react-test-renderer": "^18.1.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
   }
 }
